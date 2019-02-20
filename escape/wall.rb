@@ -20,3 +20,4 @@ class Wall
     space.add_shape(@shape)
   end
 end
+
