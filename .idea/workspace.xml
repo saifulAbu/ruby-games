@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4caa580f-8ba5-46f7-b8a4-9afd6d3dafd8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/escape/chip.rb" beforeDir="false" afterPath="$PROJECT_DIR$/escape/chip.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/escape/wall.rb" beforeDir="false" afterPath="$PROJECT_DIR$/escape/wall.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
