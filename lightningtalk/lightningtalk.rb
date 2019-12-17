@@ -36,6 +36,3 @@ end
 window = LightningTalk.new
 window.show
 
-
-
-
