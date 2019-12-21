@@ -90,9 +90,6 @@ class WhackARuby < Gosu::Window
     x = mouse_x + 50
     y = mouse_y + 23
 
-    puts "mouse", x, y
-    puts "image", x1, y1, x2, y2
-
     return true if (x > x1 && x < x2 && y > y1 && y < y2)
     return false
   end
