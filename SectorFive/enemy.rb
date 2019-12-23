@@ -1,5 +1,7 @@
 class Enemy
-  SPEED = 4
+  attr_reader :x, :y, :radius
+
+  SPEED = 2
   def initialize(window)
     @radius = 20
     @x = rand(window.width - 2 * @radius) + @radius
