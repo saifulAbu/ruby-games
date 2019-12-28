@@ -11,21 +11,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sector_five.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sector_five.rb">
+      <file leaf-file-name="sector_five_scenes.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sector_five_scenes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="63" column="5" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="63" selection-end-column="5" />
+            <state relative-caret-position="2091">
+              <caret line="154" column="29" lean-forward="false" selection-start-line="154" selection-start-column="29" selection-end-line="154" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sector_five_scenes.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sector_five_scenes.rb">
+      <file leaf-file-name="credits.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/credits.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="120" column="19" lean-forward="false" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
+            <state relative-caret-position="0">
+              <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="temp-cretid" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/temp-cretid">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="50" lean-forward="false" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="credit.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/credit.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="3" lean-forward="false" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -76,6 +96,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>button_down_start</find>
+      <find>initialize_end</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -92,6 +113,9 @@
         <option value="$PROJECT_DIR$/explosion.rb" />
         <option value="$PROJECT_DIR$/bullet.rb" />
         <option value="$PROJECT_DIR$/sector_five.rb" />
+        <option value="$PROJECT_DIR$/credit.rb" />
+        <option value="$PROJECT_DIR$/temp-cretid" />
+        <option value="$PROJECT_DIR$/credits.txt" />
         <option value="$PROJECT_DIR$/sector_five_scenes.rb" />
       </list>
     </option>
@@ -414,10 +438,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/credit.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="3" lean-forward="false" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp-cretid">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="50" lean-forward="false" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/credits.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sector_five_scenes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="120" column="19" lean-forward="false" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
+        <state relative-caret-position="2091">
+          <caret line="154" column="29" lean-forward="false" selection-start-line="154" selection-start-column="29" selection-end-line="154" selection-end-column="29" />
           <folding />
         </state>
       </provider>
