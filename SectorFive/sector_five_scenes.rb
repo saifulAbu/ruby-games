@@ -16,8 +16,8 @@ class SectorFive < Gosu::Window
     self.caption = 'Sector Five'
     @background_image = Gosu::Image.new('images/start_screen.png')
     @scene = :start
-    @enemies_appeared = 0
-    @enemies_destroyed = 0
+    @start_music = Gosu::Song.new('sounds/Lost Frontier.ogg')
+    @start_music.play(true)
   end
 
   def draw
@@ -70,6 +70,7 @@ class SectorFive < Gosu::Window
     @explosions.each do |explosion|
       explosion.draw
     end
+    draw_score
   end
 
   def initialize_game
@@ -78,6 +79,14 @@ class SectorFive < Gosu::Window
     @bullets = []
     @explosions = []
     @scene = :game
+    @game_music = Gosu::Song.new('sounds/Cephalopod.ogg')
+    @game_music.play(true)
+    @explosion_sound = Gosu::Sample.new('sounds/explosion.ogg')
+    @shooting_sound = Gosu::Sample.new('sounds/shoot.ogg')
+    @score_font = Gosu::Font.new(48)
+    @enemies_appeared = 0
+    @enemies_destroyed = 0
+    @score = "#{@enemies_destroyed}/#{@enemies_appeared}"
   end
 
   def update_game
@@ -104,6 +113,7 @@ class SectorFive < Gosu::Window
           @bullets.delete bullet
           @explosions.push Explosion.new(self, enemy.x, enemy.y)
           @enemies_destroyed += 1
+          @explosion_sound.play
         end
       end
     end
@@ -127,11 +137,14 @@ class SectorFive < Gosu::Window
       initialize_end(:hit_by_enemy) if distance < @player.radius + enemy.radius
     end
     initialize_end(:off_top) if @player.y < -@player.radius
+
+    @score = "#{@enemies_destroyed}/#{@enemies_appeared}"
   end
 
   def button_down_game(id)
     if id == Gosu::KbSpace
       @bullets.push Bullet.new(self, @player.x, @player.y, @player.angle)
+      @shooting_sound.play(0.3)
     end
   end
 
@@ -149,7 +162,7 @@ class SectorFive < Gosu::Window
                   + "you took out #{@enemies_destroyed} enemy ships."
     end
     @bottom_message = "Press P to play again, or Q to quit."
-    @message_font = Gosu::Font.new(28)
+    @message_font = Gosu::Font.new(32)
     @credits = []
     y = 700
     File.open('credits.txt').each do |line|
@@ -157,6 +170,44 @@ class SectorFive < Gosu::Window
       y += 30
     end
     @scene = :end
+    @end_music = Gosu::Song.new('sounds/FromHere.ogg')
+    @end_music.play(true)
+  end
+
+  def draw_end
+    clip_to(50, 140, 700, 360) do
+      @credits.each do |credit|
+        credit.draw
+      end
+    end
+    draw_line(0, 140, Gosu::Color::RED, WIDTH, 140, Gosu::Color::RED)
+    @message_font.draw(@message, 40, 40, 1, 1, 1, Gosu::Color::FUCHSIA)
+    @message_font.draw(@message2, 40, 75, 1, 1, 1, Gosu::Color::FUCHSIA)
+    draw_line(0, 500, Gosu::Color::RED, WIDTH, 500, Gosu::Color::RED)
+    @message_font.draw(@bottom_message, 180, 540, 1, 1, 1, Gosu::Color::AQUA)
+  end
+
+  def update_end
+    @credits.each do |credit|
+      credit.move
+    end
+    if @credits.last.y < 150
+      @credits.each do |credit|
+        credit.reset
+      end
+    end
+  end
+
+  def button_down_end(id)
+    if id == Gosu::KbP
+      initialize_game
+    elsif id == Gosu::KbQ
+      close
+    end
+  end
+
+  def draw_score
+    @score_font.draw(@score, 680, 20, 1, 1, 1, Gosu::Color::RED)
   end
 end
 
