@@ -4,7 +4,7 @@ class Square
   attr_reader :row, :column, :number, :color
 
   def initialize(window, column, row, color)
-    @@color ||= {
+    @@colors ||= {
       red:    Gosu::Color.argb(0xaaff0000),
       green:  Gosu::Color.argb(0xaa00ff00),
       blue:   Gosu::Color.argb(0xaa0000ff)
@@ -32,7 +32,7 @@ class Square
       x_center = x1 + 48
       x_text = x_center - @@font.text_width("#{@number}") / 2
       y_text = y1 + 12
-      @@font.draw("#{@number}", x_text, y_text, 1ß)
+      @@font.draw("#{@number}", x_text, y_text, 1)
     end
   end
 end
