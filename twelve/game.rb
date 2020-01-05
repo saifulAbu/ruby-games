@@ -1,0 +1,18 @@
+require_relative 'square'
+
+class Game
+  def initialize(window)
+    @window = window
+    @squares = []
+    color_list = []
+    [:red, :green, :blue].each do |color|
+      (0..5).each do |row|
+        (0..5).each do |column|
+          index = row * 6 + column
+          @squares.push Square.new(@window, column, row, color_list[index])
+        end
+      end
+    end
+  end
+  @font = Gosu::Font.new(36)
+end
