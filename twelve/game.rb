@@ -22,3 +22,4 @@ class Game
   @font = Gosu::Font.new(36)
 end
 
+
