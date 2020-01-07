@@ -17,9 +17,14 @@ class Game
         @squares.push Square.new(@window, column, row, color_list[index])
       end
     end
+    @font = Gosu::Font.new(36)
+  end
+
+  def draw
+    @squares.each do |square|
+      square.draw
     end
   end
-  @font = Gosu::Font.new(36)
 end
 
 
