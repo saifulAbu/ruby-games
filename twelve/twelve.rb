@@ -21,6 +21,22 @@ class Twelve < Gosu::Window
       @game.handle_mouse_down(mouse_x, mouse_y)
     end
   end
+
+  def button_up(id)
+    if id == Gos::MsLeft
+      @game.handle_mouse_up(mouse_x, mouse_y)
+    end
+  end
+
+  def handle_mouse_up(x, y)
+    row = (y.to_i - 20) / 100
+    column = (x.to_i - 20) / 100
+    @end_square = get_square(column, row)
+    if @start_queue and @end_square
+      move(@start_queue, @end_square)
+    end
+    @start_square = nil
+  end
 end
 
 window = Twelve.new
