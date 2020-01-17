@@ -41,4 +41,3 @@ end
 
 window = Twelve.new
 window.show
-
