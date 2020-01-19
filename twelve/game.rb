@@ -39,6 +39,32 @@ class Game
       return @squares[row * 6 + column]
     end
   end
+
+  def squares_between_in_row(square1, square2)
+    the_squares = []
+    if squares.column < square2.column
+      column_start, column_end = square1.column, square2.column
+    else
+      column_start, column_end = square2.column, square1.column
+    end
+    (column_start .. column_end).each do |column|
+      the_squares.push get_square(column, square1.row)
+    end
+    return the_squares
+  end
+
+  def squares_between_in_column(square1, square2)
+    the_squares = []
+    if square1.row < square2.row
+      row_start, row_end = square1.row, square2.row
+    else
+      row_start, row_end = square2.row, square1.row
+    end
+    (row_start .. row_end).each do |row|
+      the_squares.push get_square(square1.column, row)
+    end
+    return the_squares
+  end
 end
 
 
