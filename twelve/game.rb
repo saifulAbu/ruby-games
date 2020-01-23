@@ -65,6 +65,20 @@ class Game
     end
     return the_squares
   end
+
+  def move(square1, square2)
+    return if square1.number == 0
+    if square1.row == square2.row
+      squares = squares_between_in_row(square1, square2)
+    elsif square1.column == square2.column
+      squares = squares_between_in_column(square1, square2)
+    else
+      return
+    end
+    squares.reject!{|square| square.number == 0}
+    return if squares.count != 2
+    return if squares[0].color != squares[1].color
+  end
 end
 
 
