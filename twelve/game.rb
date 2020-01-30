@@ -80,3 +80,4 @@ class Game
     return if squares[0].color != squares[1].color
   end
 end
+
