@@ -23,7 +23,7 @@ class Twelve < Gosu::Window
   end
 
   def button_up(id)
-    if id == Gos::MsLeft
+    if id == Gosu::MsLeft
       @game.handle_mouse_up(mouse_x, mouse_y)
     end
   end

@@ -32,6 +32,16 @@ class Game
     @start_square = get_square(column, row)
   end
 
+  def handle_mouse_up(x, y)
+    row = (y.to_i - 20) / 100
+    column = (x.to_i - 20) / 100
+    @end_square = get_square(column, row)
+    if @start_square and @end_square
+      move(@start_square, @end_square)
+    end
+    @start_square = nil
+  end
+
   def get_square(column, row)
     if column < 0 or column > 5 or row < 0 or row > 5
       return nil
@@ -42,7 +52,7 @@ class Game
 
   def squares_between_in_row(square1, square2)
     the_squares = []
-    if squares.column < square2.column
+    if square1.column < square2.column
       column_start, column_end = square1.column, square2.column
     else
       column_start, column_end = square2.column, square1.column
@@ -78,5 +88,11 @@ class Game
     squares.reject!{|square| square.number == 0}
     return if squares.count != 2
     return if squares[0].color != squares[1].color
+
+    color = squares[0].color
+    number = squares[0].number + squares[1].number
+    squares[0].clear
+    squares[1].clear
+    square2.set(color, number)
   end
 end
