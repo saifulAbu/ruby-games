@@ -69,7 +69,7 @@ class Square
     y3 = y1 + 4
     x4 = x1
     y4 = y1 + 4
-    @window.draw_quad(x1, y1, c, x2, y2, c, x3, y3, c, x4, y4, c, 3)
+    @@window.draw_quad(x1, y1, c, x2, y2, c, x3, y3, c, x4, y4, c, 3)
   end
 
   def draw_vertical_highlight(x1, y1, c)
@@ -79,6 +79,6 @@ class Square
     y3 = y1 + 92
     x4 = x1
     y4 = y1 + 92
-    @window.draw_quad(x1, y1, c, x2, y2, c, x3, y3, c, x4, y4, c, 3)
+    @@window.draw_quad(x1, y1, c, x2, y2, c, x3, y3, c, x4, y4, c, 3)
   end
 end

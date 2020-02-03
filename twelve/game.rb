@@ -25,6 +25,13 @@ class Game
       square.draw
     end
     return unless @start_square
+    @start_square.highlight(:start)
+    return unless @current_square && @current_square != @start_square
+    if move_is_legal?(@start_square, @current_square)
+      @current_square.highlight(:legal)
+    else
+      @current_square.highlight(:illegal)
+    end
   end
 
   def handle_mouse_down(x, y)
