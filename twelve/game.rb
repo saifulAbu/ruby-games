@@ -24,6 +24,7 @@ class Game
     @squares.each do |square|
       square.draw
     end
+    return unless @start_square
   end
 
   def handle_mouse_down(x, y)
@@ -94,5 +95,26 @@ class Game
     squares[0].clear
     squares[1].clear
     square2.set(color, number)
+  end
+
+  def handle_mouse_move(x, y)
+    row = (y.to_i - 20) / 100
+    column = (x.to_i - 20) / 100
+    @current_square = get_square(column, row)
+  end
+
+  def move_is_legal?(square1, square2)
+    return false if square1.number == 0
+    if square1.row == square2.row
+      squares = squares_between_in_row(square1, square2)
+    elsif square1.column == square2.column
+      squares = squares_between_in_column(square1, square2)
+    else
+      return false
+    end
+    squares.reject!{|square| square.number == 0}
+    return false if squares.count != 2
+    return false if squares[0].color != squares[1].color
+    return true
   end
 end

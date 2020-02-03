@@ -41,6 +41,10 @@ class Twelve < Gosu::Window
     end
     @start_square = nil
   end
+
+  def update
+    @game.handle_mouse_move(mouse_x, mouse_y)
+  end
 end
 
 window = Twelve.new
