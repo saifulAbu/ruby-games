@@ -20,6 +20,12 @@ class Escape < Gosu::Window
   def draw
     @background.draw(0, 0, 1)
   end
+
+  def udpate
+    unless @game_over
+      @space.step(1.0/600)
+    end
+  end
 end
 
 window = Escape.new
