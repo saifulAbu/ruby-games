@@ -1,4 +1,6 @@
 class Boulder
+  FRICTION = 0.7
+  ELASTICITY = 0.95
   SPEED_LIMIT = 500
   attr_reader :body, :width, :height
   def initialize(window, x, y)
