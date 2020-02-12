@@ -9,3 +9,4 @@ class Boulder
     @body.v_limit = SPEED_LIMIT
   end
 end
+
