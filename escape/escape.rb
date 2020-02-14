@@ -30,3 +30,4 @@ end
 
 window = Escape.new
 window.show
+
