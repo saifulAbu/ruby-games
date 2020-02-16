@@ -1,6 +1,7 @@
 require 'gosu'
 require 'chipmunk'
 require_relative 'boulder'
+require_relative 'platform'
 
 class Escape < Gosu::Window
   DAMPING = 0.90
@@ -18,6 +19,7 @@ class Escape < Gosu::Window
     @space.damping = DAMPING
     @space.gravity = CP::Vec2.new(0.0, GRAVITY)
     @boulders = []
+    @platforms = make_platforms
   end
 
   def draw
@@ -25,6 +27,9 @@ class Escape < Gosu::Window
     @background.draw(0, 529, 0)
     @boulders.each do |boulder|
       boulder.draw
+    end
+    @platforms.each do |platform|
+      platform.draw
     end
   end
 
@@ -35,6 +40,15 @@ class Escape < Gosu::Window
     if rand < BOULDER_FREQUENCY
       @boulders.push Boulder.new(self, 200 + rand(400), -20)
     end
+  end
+
+  def make_platforms
+    platforms = []
+    platforms.push Platform.new(self, 150, 700)
+    platforms.push Platform.new(self, 320, 650)
+    platforms.push Platform.new(self, 150, 500)
+    platforms.push Platform.new(self, 470, 550)
+    return platforms
   end
 end
 
