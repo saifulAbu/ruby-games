@@ -1,6 +1,6 @@
 require 'gosu'
 require 'chipmunk'
-require 'boulder'
+require_relative 'boulder'
 
 class Escape < Gosu::Window
   DAMPING = 0.90
@@ -28,7 +28,7 @@ class Escape < Gosu::Window
     end
   end
 
-  def udpate
+  def update
     unless @game_over
       @space.step(1.0/600)
     end
