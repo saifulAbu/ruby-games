@@ -14,6 +14,9 @@ class Wall
                 CP::Vec2.new(-width / 2, height / 2),
                 CP::Vec2.new(width / 2, height / 2),
                 CP::Vec2.new(width / 2, -height / 2)]
-    @shape = CP::Shape::Poly.new(@body, @bounds)
+    @shape = CP::Shape::Poly.new(@body, @bounds, CP::Vec2.new(0, 0))
+    @shape.u = FRICTION
+    @shape.e = ELASTICITY
+    space.add_shape(@shape)
   end
 end
