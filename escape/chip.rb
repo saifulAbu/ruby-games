@@ -28,4 +28,22 @@ class Chip
         @image_index = 0
         @off_ground = true
     end
+
+    def draw
+      case @action
+      when :run_right
+        @images[@image_index].draw_rot(@body.p.x, @body.p.y, 2, 0)
+        @image_index = (@image_index + 0.2) % 7
+      when :stand, :jump_right
+        @images[0].draw_rot(@body.p.x, @body.p.y, 2, 0)
+      when :run_left
+        @images[@image_index].draw_rot(@body.p.x, @body.p.y, 2, 0, 0.5, 0.5, -1, 1)
+        @image_index = (@image_index + 0.2) % 7
+      when :jump_left
+        @images[0].draw_rot(@body.p.x, @body.p.y, 2, 0, 0.5, 0.5, -1, 1)
+      else
+        @images[0].draw_rot(@body.p.x, @body.p.y, 2, 0)
+      end
+    end
+
 end

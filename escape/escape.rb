@@ -26,7 +26,8 @@ class Escape < Gosu::Window
     @floor = Wall.new(self, 400, 810, 800, 20)
     @left_wall = Wall.new(self, -10, 400, 20, 800)
     @right_wall = Wall.new(self, 810, 470, 20, 660)
-    @player = Chip.new(self, 70, 700)
+    #@player = Chip.new(self, 70, 700)
+    @player = Chip.new(self, 300, 500)
   end
 
   def draw
@@ -38,6 +39,7 @@ class Escape < Gosu::Window
     @platforms.each do |platform|
       platform.draw
     end
+    @player.draw
   end
 
   def update
